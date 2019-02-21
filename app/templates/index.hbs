@@ -1,0 +1,10 @@
+<div class="layout-row layout-md-xs layout-align-center md-content">
+  <div class="layout-column flex-xs flex-gt-md-50 md-padding">
+    <h2>Upcoming Agenda</h2>
+    {{#each this.model as |bill|}}
+      {{#bill-card bill=bill}}{{/bill-card}}
+    {{/each}}
+  </div>
+</div>
+
+{{outlet}}

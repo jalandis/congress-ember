@@ -1,0 +1,15 @@
+{{#paper-card as |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}{{bill.number}}{{/text.headline}}
+      {{#text.subhead}}{{bill.name}}{{/text.subhead}}
+    {{/title.text}}
+    {{title.media size="sm" src=bill.image alt="US Congress" title="US Congress"}}
+  {{/card.title}}
+  {{#card.actions}}
+    {{#paper-button primary=true raised=true href=(href-to "legislation" bill)}}
+      Details
+    {{/paper-button}}
+    {{#paper-button accent=true raised=true href=bill.url}}PDF{{/paper-button}}
+  {{/card.actions}}
+{{/paper-card}}

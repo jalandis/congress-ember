@@ -1,0 +1,49 @@
+<div class="layout-row layout-xs-column layout-align-center md-content">
+  <div class="layout-column flex-xs flex-gt-md-50 md-padding">
+    <h2>{{model.bill.name}}</h2>
+    {{#paper-card}}
+      {{#paper-list}}
+        {{#paper-toolbar}}
+          {{#paper-toolbar-tools}}
+            <h2>Cosponsors</h2>
+          {{/paper-toolbar-tools}}
+        {{/paper-toolbar}}
+        {{#each model.sponsors as |representative|}}
+          {{#paper-item}}
+            <div class="md-list-item-text">
+              <h3>{{representative.name}}</h3>
+              <p>{{representative.party}}</p>
+            </div>
+          {{/paper-item}}
+        {{/each}}
+      {{/paper-list}}
+    {{/paper-card}}
+
+    {{#paper-card}}
+      {{#paper-list}}
+        {{#paper-toolbar}}
+          {{#paper-toolbar-tools}}
+            <h2>Public Statements</h2>
+          {{/paper-toolbar-tools}}
+        {{/paper-toolbar}}
+        {{#each model.statements as |statement|}}
+          {{#paper-item as |controls|}}
+            <div class="md-list-item-text">
+              <h3>{{statement.title}}</h3>
+              <p>{{statement.speaker}}</p>
+            </div>
+
+            <span class="flex" />
+
+            <!-- Bug in ember-paper: https://github.com/miguelcobain/ember-paper/issues/919 -->
+            {{#controls.button accent=true raised=true secondary=true onClick=(action "follow" statement.id)}}
+              Source
+            {{/controls.button}}
+          {{/paper-item}}
+        {{/each}}
+      {{/paper-list}}
+    {{/paper-card}}
+  </div>
+</div>
+
+{{outlet}}
