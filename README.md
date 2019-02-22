@@ -8,6 +8,8 @@ To avoid installing node and npm versions on my laptop, I will be using a Docker
 
 This will spin up a [local Ember site](http://localhost:4200) with live-reload for convenient developement but the [Congressional Go API](https://github.com/jalandis/congress-go-api) server will still be needed for data access.  See the [Congression Go API README](https://github.com/jalandis/congress-go-api/blob/master/README.md) for instructions on the setup of this required component.
 
+The site should be accessible from **http://localhost:4200** while the docker container is running.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
