@@ -2,11 +2,11 @@
 
 ## Docker Shortcut
 
-To avoid installing node and npm versions on my machine, I will be using a Docker container.  This is necessary to ensure stability on my only available development machine.
+To avoid installing node and npm versions on my laptop, I will be using a Docker container.  This is necessary to ensure stability on my only available development machine.
 
     docker run --rm -ti -v $(pwd):/myapp -p 4200:4200 -p 7020:7020 -p 7357:7357 danlynn/ember-cli:3.7.1 bash
 
-This will spin up an ember server with livereload for convenient developement but the [Congressional Go API](https://github.com/jalandis/congress-go-api) server will still be needed for data access.
+This will spin up a [local Ember site](http://localhost:4200) with live-reload for convenient developement but the [Congressional Go API](https://github.com/jalandis/congress-go-api) server will still be needed for data access.  See the [Congression Go API README](https://github.com/jalandis/congress-go-api/blob/master/README.md) for instructions on the setup of this required component.
 
 ## Prerequisites
 
