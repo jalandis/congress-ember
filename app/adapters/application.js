@@ -3,7 +3,7 @@ import ENV from '../config/environment';
 
 export default DS.JSONAPIAdapter.extend({
   host: ENV.APP.API.host,
-  namespace: `congress/${ENV.APP.API.version}`,
+  namespace: `api/${ENV.APP.API.version}`,
 
   query(store, type, query) {
     let url = this.buildURL(type.modelName, null, null, 'query', query);
@@ -16,7 +16,7 @@ export default DS.JSONAPIAdapter.extend({
       case 'representative':
         return `${baseUrl}/legislation/${query.bill}/representatives`;
       case 'statement':
-        return `${baseUrl}/congress/${query.congress}/legislation/${query.bill}/statements`;
+        return `${baseUrl}/legislation/${query.bill}/statements`;
       default:
         return this._super(...arguments);
     }

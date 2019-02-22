@@ -8,10 +8,7 @@ export default Route.extend({
       return hash({
         bill: bill,
         sponsors: store.query('representative', { bill: bill.id }),
-        statements: store.query(
-          'statement',
-          { bill: bill.slug, congress: bill.congress }
-        )
+        statements: store.query('statement', { bill: bill.id })
       });
     });
   }
